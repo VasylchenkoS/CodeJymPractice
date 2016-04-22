@@ -7,8 +7,9 @@ public class SumDigits {
         int result=0;
         String s = String.valueOf(number);
         char[] arrayList = s.toCharArray();
-        for(int a=0;a<arrayList.length;a++) {
-            result+=Character.getNumericValue(arrayList[a]);
+        for (char anArrayList : arrayList) {
+            if (Character.isDigit(anArrayList))
+                result += Character.getNumericValue(anArrayList);
         }
         return result;
     }
