@@ -10,49 +10,33 @@ package com.gojavaonline2.vasylchenko.practice.Task_1;
 
 
 public class MatrixTraversal {
+
     public int[] print(int[][] input) {
-        if ((input.length == 1)&&(input[0].length == 0)) {
-            int a[] = new int[]{input[0][0]};
-            return a;
-        }
         int a = input.length * input[0].length;
         int result[] = new int[a];
+        int rowNum = input.length;
+        int colNum = input[0].length;
+        int loopOut = 0, curAdd = 0;
+        int j = 0, k = 0;
 
-        int n = input.length;
-        int m = input[0].length;
-        int f = n - 1;
-        int w = m - 1;
-        int c = 0;
-        int i = 0;
-        int j = 0;
-        int p = 0;
-
-        while (c != n * m - 1) {
-            while (j < w) {
-                result[c++] = input[i][j];
-                j++;
+        while (loopOut < a) {
+            k++;
+            for (j = k - 1; (j < colNum - k + 1) && (loopOut < a); j++) {
+                result[curAdd++] = input[k - 1][j];
+                loopOut++;
             }
-            while (i < f) {
-                result[c++] = input[i][j];
-                i++;
+            for (j = k; j < (rowNum - k + 1) && (loopOut < a); j++) {
+                result[curAdd++] = input[j][colNum - k];
+                loopOut++;
             }
-            while (j > p) {
-                result[c++] = input[i][j];
-                j--;
+            for (j = colNum - k - 1; (j >= k - 1) && (loopOut < a); j--) {
+                result[curAdd++] = input[rowNum - k][j];
+                loopOut++;
             }
-
-            //Здесь уменьшаем количество шагов в каждом цикле по строкам, столбцам и по количеству проходимых клеток клеток
-            f--;
-            w--;
-            p++;
-            while (i > p) {
-                result[c++] = input[i][j];
-                i--;
+            for (j = rowNum - k - 1; (j >= k) && (loopOut < a); j--) {
+                result[curAdd++] = input[j][k - 1];
+                loopOut++;
             }
-        }
-        //Условие добавления последнего элемента
-        if (c == n * m - 1) {
-            result[c++] = input[i][j];
         }
         return result;
     }

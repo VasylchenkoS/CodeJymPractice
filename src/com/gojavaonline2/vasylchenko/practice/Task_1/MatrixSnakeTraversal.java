@@ -11,7 +11,24 @@ package com.gojavaonline2.vasylchenko.practice.Task_1;
 
 public class MatrixSnakeTraversal {
     public int[] print(int[][] input) {
-
-        return null;
+        int a = input.length * input[0].length;
+        int result[] = new int[a];
+        int loopOut = 0;
+        int curRow = 0;
+        int curCol = 0;
+        int curAdd = 0;
+        while (loopOut < a) {
+            while ((curCol < input.length) && (loopOut < a)) {
+                result[curAdd++] = input[curCol++][curRow];
+                loopOut++;
+            }
+            curRow++;
+            while ((curCol > 0) && (loopOut < a)) {
+                result[curAdd++] = input[--curCol][curRow];
+                loopOut++;
+            }
+            curRow++;
+        }
+        return result;
     }
 }
