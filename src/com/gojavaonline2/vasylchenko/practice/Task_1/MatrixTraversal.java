@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice.Task_1;
+package com.gojavaonline2.vasylchenko.practice.task_1;
 
 //Обійти матрицю по спіралі і записати всі числа в одмірний масив.
 //        Для матриці
@@ -12,6 +12,8 @@ package com.gojavaonline2.vasylchenko.practice.Task_1;
 public class MatrixTraversal {
 
     public int[] print(int[][] input) {
+        if (input.length == 0)
+            return new int[]{};
         int a = input.length * input[0].length;
         int result[] = new int[a];
         int rowNum = input.length;

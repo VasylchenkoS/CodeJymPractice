@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice.Task_1;
+package com.gojavaonline2.vasylchenko.practice.task_1;
 
 //Обійти матрицю "змійкою" і повернути всі числа в одномірному масиві.
 //        Наприклад:
@@ -11,6 +11,8 @@ package com.gojavaonline2.vasylchenko.practice.Task_1;
 
 public class MatrixSnakeTraversal {
     public int[] print(int[][] input) {
+        if (input.length == 0)
+            return new int[]{};
         int a = input.length * input[0].length;
         int result[] = new int[a];
         int loopOut = 0;

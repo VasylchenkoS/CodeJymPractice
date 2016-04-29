@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice.Task_1;
+package com.gojavaonline2.vasylchenko.practice.task_1;
 
 //Знайти перше непарне число і повернути його індекс.
 //Якщо такого немає, повернути -1
