@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice;
+package com.gojavaonline2.vasylchenko.practice.task_2;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,6 +40,13 @@ public class AddNumberBase36Test {
         String input1 = "zjfghfhdsdfathjjhgjhghjfjfjhjhdsrreqqklhu456hfz5";
         String input2 = "wsfgsgds56346263fgfhghfghfhgfsrr5476hjfgdhdhg3N";
         String expected = "10g7vy7xrkildxnlpkvzwxy0uzwyyzx6kiwixx24xahmjyw2s";
+        Assert.assertEquals(expected, new AddNumberBase36().add(input1, input2));
+    }
+    @Test
+    public void testAdd5() throws Exception {
+        String input1 = "";
+        String input2 = "";
+        String expected = "";
         Assert.assertEquals(expected, new AddNumberBase36().add(input1, input2));
     }
 }

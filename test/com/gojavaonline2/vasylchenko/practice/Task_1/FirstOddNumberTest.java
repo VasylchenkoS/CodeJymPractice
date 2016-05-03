@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice.Task_1;
+package com.gojavaonline2.vasylchenko.practice.task_1;
 
 import org.junit.*;
 import org.junit.Test;
@@ -16,5 +16,10 @@ public class FirstOddNumberTest {
         int input[] = {4, 44, 4, 2, 8, 4, };
         Assert.assertEquals(-1,new FirstOddNumber().find(input));
 
+    }
+    @Test (timeout = 100)
+    public void testFind2() throws Exception {
+        int input[] = {};
+    Assert.assertEquals(-1,new FirstOddNumber().find(input));
     }
 }

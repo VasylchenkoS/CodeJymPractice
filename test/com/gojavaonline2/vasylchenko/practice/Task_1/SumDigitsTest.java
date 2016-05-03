@@ -1,4 +1,4 @@
-package com.gojavaonline2.vasylchenko.practice.Task_1;
+package com.gojavaonline2.vasylchenko.practice.task_1;
 
 import org.junit.*;
 import org.junit.Test;
@@ -16,6 +16,13 @@ public class SumDigitsTest {
     public void testSum1() throws Exception {
             String result = "47";
             int input = -2147483648;
+            Assert.assertEquals(result, String.valueOf(new SumDigits().sum(input)));
+    }
+
+    @Test
+    public void testSum2() throws Exception {
+            String result = "0";
+            int input = 0;
             Assert.assertEquals(result, String.valueOf(new SumDigits().sum(input)));
     }
 }
