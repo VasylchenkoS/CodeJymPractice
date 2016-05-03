@@ -40,4 +40,11 @@ public class AddBinaryTest {
         String expected = "11111111111111111111111111111110";
         Assert.assertEquals(expected, new AddBinary().add(input1, input2));
     }
+    @Test
+    public void testAdd5() throws Exception {
+        String input1 = Integer.toBinaryString(Integer.MIN_VALUE);
+        String input2 = Integer.toBinaryString(Integer.MAX_VALUE);
+        String expected = Integer.toBinaryString(Integer.MIN_VALUE + Integer.MAX_VALUE);
+        Assert.assertEquals(expected, new AddBinary().add(input1, input2));
+    }
 }
