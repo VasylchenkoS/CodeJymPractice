@@ -3,15 +3,8 @@ package com.gojavaonline2.vasylchenko.practice.task_2;
 //Додайте два беззнакових числа, що передаються як рядки.
 //"101" + "100" = "1001"
 
-public class AddBinary {
+class AddBinary {
     public String add(String a, String b) {
-        if ((a.length() == 32 && a.charAt(0) == '1') || (b.length() == 32 && b.charAt(0) == '1'))
-            return negativeSum(a, b);
-        else
-            return Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2));
-    }
-
-    private String negativeSum(String a, String b){
         int max = Math.max(a.length(), b.length());
         a = prepare(a, max);
         b = prepare(b, max);
@@ -23,13 +16,13 @@ public class AddBinary {
             StringBuilder s = new StringBuilder(sum(s1, s2));
             StringBuilder s3;
             if (s.length() != 1 && i != 0) {
-                s3 = new StringBuilder(sum(String.valueOf(result.charAt(k - 1)), String.valueOf(s.charAt(0))));
+                s3 = sum(String.valueOf(result.charAt(k - 1)), String.valueOf(s.charAt(0)));
+                result.deleteCharAt(k - 1);
                 if (s.length() > 1)
                     s3.append(s.charAt(1));
-                result.deleteCharAt(k - 1);
             } else s3 = s;
             result.append(s3);
-            if ((k == 1) && (result.length() == 3))
+            if ((k == 0) && (result.length() == 2))
                 k++;
             k++;
         }
