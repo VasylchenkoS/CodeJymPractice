@@ -6,8 +6,7 @@ public class FindMaxNumber {
     public int max(int[] input) {
         int result = input[0];
         for (int anInput : input) {
-            if (result < anInput)
-                result = anInput;
+            result = Math.max(result, anInput);
         }
         return result;
     }
