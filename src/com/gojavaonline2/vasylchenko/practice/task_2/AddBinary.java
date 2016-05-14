@@ -40,7 +40,6 @@ class AddBinary {
     }
 
     public String prepare(String s, int num) {
-        s = s.toLowerCase();
         StringBuilder result = new StringBuilder(s);
         while (result.length() < num)
             result.insert(0, 0);
