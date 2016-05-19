@@ -5,38 +5,33 @@ package com.gojavaonline2.vasylchenko.practice.task_4;
 Скількома способами можна зібрати, з них, ланцюжок довжиною  N.
 Кількість наявних ланок кожного кольору вважати бескінечною.*/
 public class ColorChain {
-    private static final int[] USE_CHAINS = {1, 2, 3};
-    private static int result;
 
     public int count(int N) {
-        result = 0;
-        getLinksCount(N, 0);
-        return result;
-    }
-
-    private void getLinksCount(int inputValue, int length) {
-        while (length <= inputValue)
-            getLinksCountDP(inputValue, new int[length++], 0);
-    }
-
-    private void getLinksCountDP(int inputValue, int[] intermediateResults, int depth) {
-        if (depth == intermediateResults.length) {
-            if (getSum(intermediateResults) == inputValue) {
-                result++;
-//                System.out.println(Arrays.toString(intermediateResults));
-            } else {
-                for (int j : USE_CHAINS) {
-                    intermediateResults[depth] = j;
-                    getLinksCountDP(inputValue, intermediateResults, depth + 1);
-                }
-            }
-        }
-    }
-
-    private static int getSum(int[] temp) {
-        int sum = 0;
-        for (int i : temp)
-            sum += i;
-        return sum;
+        if (N <= 2) return N;
+        if (N == 3) return 4;
+        return count(N - 1) + count(N - 2) + count(N - 3);
     }
 }
+//        int[] intermediateResults = new int[N + 1];
+//        return getStripCountDP(N, intermediateResults);
+
+//    private int getStripCountDP(int N, int[] intermediateResults) {
+//
+//        if (N == 0 || N == 1 || N == 2) {
+//            intermediateResults[N] = N;
+//            return N;
+//        }
+//        if (N == 3) {
+//            intermediateResults[N] = 4;
+//            return 4;
+//        }
+//
+//        int oneStripLength = getStripCountDP(N - 1, intermediateResults);
+//        int twoStripLength = getStripCountDP(N - 2, intermediateResults);
+//        int threeStripLength = getStripCountDP(N - 3, intermediateResults);
+//
+//        int result = oneStripLength + twoStripLength + threeStripLength;
+//        intermediateResults[N] = result;
+//        return result;
+//    }
+

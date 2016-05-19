@@ -47,4 +47,10 @@ public class ColorChainTest {
         int expected = 121415;
         Assert.assertEquals(expected, new ColorChain().count(input));
     }
+    @Test
+    public void testCount7() throws Exception {
+        int input = 4;
+        int expected = 7;
+        Assert.assertEquals(expected, new ColorChain().count(input));
+    }
 }

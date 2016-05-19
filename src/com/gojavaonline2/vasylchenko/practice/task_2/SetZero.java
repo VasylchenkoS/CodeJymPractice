@@ -20,7 +20,8 @@ public class SetZero {
                 else if (stringBuilder.charAt(j) == '1')
                 stringBuilder.setCharAt(j,'0');
             }
-            result = -1*(Integer.parseInt(stringBuilder.toString(),2)+1);
+//            result = -1*(Integer.parseInt(stringBuilder.toString(),2)+1);
+            result = Integer.parseUnsignedInt(stringBuilder.toString());
         }
         else result = Integer.parseInt(stringBuilder.toString(),2);
         return result;
